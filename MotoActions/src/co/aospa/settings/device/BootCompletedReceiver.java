@@ -15,10 +15,21 @@
  * limitations under the License.
  */
 
-package org.lineageos.settings.device.doze;
+package co.aospa.settings.device;
 
-public interface ScreenStateNotifier {
-    void screenTurnedOn();
+import android.content.BroadcastReceiver;
+import android.content.Context;
+import android.content.Intent;
+import android.os.UserHandle;
+import android.util.Log;
 
-    void screenTurnedOff();
+public class BootCompletedReceiver extends BroadcastReceiver {
+    private static final String TAG = "MotoActions";
+
+    @Override
+    public void onReceive(final Context context, Intent intent) {
+        Log.i(TAG, "Booting");
+        context.startServiceAsUser(new Intent(context, MotoActionsService.class),
+                UserHandle.CURRENT);
+    }
 }

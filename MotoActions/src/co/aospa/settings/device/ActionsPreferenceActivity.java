@@ -15,21 +15,21 @@
  * limitations under the License.
  */
 
-package org.lineageos.settings.device;
+package co.aospa.settings.device;
 
 import android.os.Bundle;
 
 import com.android.settingslib.collapsingtoolbar.CollapsingToolbarBaseActivity;
 import com.android.settingslib.widget.R;
 
-public class ModelNumberActivity extends CollapsingToolbarBaseActivity {
+public class ActionsPreferenceActivity extends CollapsingToolbarBaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         getFragmentManager()
                 .beginTransaction()
-                .replace(R.id.content_frame, new ModelNumberFragment())
+                .replace(R.id.content_frame, new ActionsPreferenceFragment())
                 .commit();
     }
 }

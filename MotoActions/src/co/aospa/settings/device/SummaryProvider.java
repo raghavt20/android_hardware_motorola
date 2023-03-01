@@ -15,7 +15,7 @@
  * limitations under the License
  */
 
-package org.lineageos.settings.device;
+package co.aospa.settings.device;
 
 import static com.android.settingslib.drawer.TileUtils.META_DATA_PREFERENCE_SUMMARY;
 

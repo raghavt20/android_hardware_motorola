@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-package org.lineageos.settings.device;
+package co.aospa.settings.device;
 
 import static android.provider.Settings.Secure.DOZE_ALWAYS_ON;
 import static android.provider.Settings.Secure.DOZE_ENABLED;
@@ -29,9 +29,9 @@ import android.provider.Settings;
 
 import androidx.preference.PreferenceManager;
 
-import org.lineageos.settings.device.actions.CameraActivationAction;
-import org.lineageos.settings.device.actions.TorchAction;
-import org.lineageos.settings.device.actions.UpdatedStateNotifier;
+import co.aospa.settings.device.actions.CameraActivationAction;
+import co.aospa.settings.device.actions.TorchAction;
+import co.aospa.settings.device.actions.UpdatedStateNotifier;
 
 public class MotoActionsSettings {
     private static final String GESTURE_CAMERA_ACTION_KEY = "gesture_camera_action";

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2015 The CyanogenMod Project
+ * Copyright (c) 2016 The CyanogenMod Project
  * Copyright (c) 2017-2022 The LineageOS Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -15,21 +15,21 @@
  * limitations under the License.
  */
 
-package org.lineageos.settings.device;
+package co.aospa.settings.device;
 
-import android.content.BroadcastReceiver;
-import android.content.Context;
-import android.content.Intent;
-import android.os.UserHandle;
-import android.util.Log;
+import android.os.Bundle;
 
-public class BootCompletedReceiver extends BroadcastReceiver {
-    private static final String TAG = "MotoActions";
+import com.android.settingslib.collapsingtoolbar.CollapsingToolbarBaseActivity;
+import com.android.settingslib.widget.R;
+
+public class ModelNumberActivity extends CollapsingToolbarBaseActivity {
 
     @Override
-    public void onReceive(final Context context, Intent intent) {
-        Log.i(TAG, "Booting");
-        context.startServiceAsUser(new Intent(context, MotoActionsService.class),
-                UserHandle.CURRENT);
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        getFragmentManager()
+                .beginTransaction()
+                .replace(R.id.content_frame, new ModelNumberFragment())
+                .commit();
     }
 }
